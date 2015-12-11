@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdk_android_manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <application>
+    
+    	<meta-data android:name="sinaweibo_app_key" android:value="{{sinaweibo_app_key}}" />
+    	<meta-data android:name="sinaweibo_redirect_url" android:value="{{sinaweibo_redirect_url}}" />
+    	<meta-data android:name="sinaweibo_scope" android:value="{{sinaweibo_scope}}" />
+    
+        <!-- 必须注册在微博授权，分享微博时候用到 -->
+        <activity android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser" 
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" >
+        </activity>
+        
+        <!-- 手机短信注册页面 -->
+        <activity android:name="com.sina.weibo.sdk.register.mobile.MobileRegisterActivity" 
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" >
+        </activity>
+        
+         <!-- 注册选择国家页面 -->
+        <activity android:name="com.sina.weibo.sdk.register.mobile.SelectCountryActivity" 
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" >
+        </activity>
+        
+        <service android:name="com.sina.weibo.sdk.net.DownloadService"
+            android:exported="false"></service>
+            
+    </application>
+    
+</sdk_android_manifest>
